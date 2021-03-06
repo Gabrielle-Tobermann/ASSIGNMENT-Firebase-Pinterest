@@ -1,7 +1,7 @@
-const showBoards = (arr) => {
+const showPins = (arr) => {
   document.querySelector('#content-container').innerHTML = '';
   document.querySelector('#form-container').innerHTML = '';
-  // WILL NEED TO ADD BUTTON
+  // ADD BUTTON FOR PINS
   arr.forEach((item) => {
     document.querySelector('#content-container').innerHTML += `<div class="card" style="width: 18rem;">
     <img src="${item.image}" class="card-img-top" alt="${item.title}">
@@ -12,10 +12,4 @@ const showBoards = (arr) => {
     </div>
   </div>`;
   });
-};
-
-const emptyBoards = () => {
-  document.querySelector('#content-container').innerHTML = '<h1>No Items</h1>';
-};
-
-export { showBoards, emptyBoards };
+} 
