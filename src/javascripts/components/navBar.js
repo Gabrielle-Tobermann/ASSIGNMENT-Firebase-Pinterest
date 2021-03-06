@@ -14,7 +14,7 @@ const navBar = () => {
   </div>
 </id=nav>`;
 
-  document.querySelector('#app').innerHTML = domString;
+  document.querySelector('#navigation').innerHTML = domString;
 };
 
 export default navBar;
