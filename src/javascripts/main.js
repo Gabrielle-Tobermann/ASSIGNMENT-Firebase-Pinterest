@@ -1,12 +1,11 @@
 // USE WITH FIREBASE AUTH
-// import checkLoginStatus from './helpers/auth';
+// import firebase from 'firebase/app';
+// import 'firebase/auth';
 import 'bootstrap'; // import bootstrap elements and js
 import '../styles/main.scss';
-import navBar from './components/navBar';
 import checkLoginStatus from './helpers/auth';
 
 const init = () => {
-  navBar();
   checkLoginStatus();
 };
 
