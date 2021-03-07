@@ -1,6 +1,8 @@
 import showPins from '../components/pins';
 import boardPinsInfo from './data/boardPinData';
 import boardInfo from '../components/boardInfo';
+// import { getBoards } from './data/boardData';
+// import { showBoards, emptyBoards } from '../components/Boards';
 
 // will need to add uid as param
 const domEvents = () => {
@@ -13,6 +15,10 @@ const domEvents = () => {
         showPins(boardInfoObj.boardPins);
         boardInfo(boardInfoObj.board);
       });
+    }
+
+    if (e.target.id.includes('return-to-boards')) {
+      
     }
 
     if (e.target.id.includes('delete-board')) {
