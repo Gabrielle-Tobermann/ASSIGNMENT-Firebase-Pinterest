@@ -1,9 +1,13 @@
 import showPins from '../components/pins';
 import boardPinsInfo from './data/boardPinData';
 import boardInfo from '../components/boardInfo';
+import { getBoards } from './data/boardData';
+import { showBoards } from '../components/Boards';
+// import { getBoards } from './data/boardData';
+// import { showBoards, emptyBoards } from '../components/Boards';
 
 // will need to add uid as param
-const domEvents = () => {
+const domEvents = (uid) => {
   document.querySelector('body').addEventListener('click', (e) => {
     if (e.target.id.includes('board-title')) {
       console.warn('click');
@@ -13,6 +17,10 @@ const domEvents = () => {
         showPins(boardInfoObj.boardPins);
         boardInfo(boardInfoObj.board);
       });
+    }
+
+    if (e.target.id.includes('return-to-boards')) {
+      getBoards(uid).then((boardsArray) => showBoards(boardsArray));
     }
 
     if (e.target.id.includes('delete-board')) {
