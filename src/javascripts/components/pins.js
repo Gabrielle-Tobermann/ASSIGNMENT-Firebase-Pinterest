@@ -7,9 +7,12 @@ const showPins = (arr) => {
     <img src="${item.image}" class="card-img-top" alt="${item.title}">
     <div class="card-body">
       <h5 class="card-title">${item.title}</h5>
-      <button class="btn btn-info" data-toggle="modal" data-target="#formModal" id="edit-board-btn--${item.firebaseKey}">Edit Board</button>
-      <button class="btn btn-danger" id="delete-board--${item.firebaseKey}">Delete Book</button>
+      <p class="card-text">${item.description}</p>
+      <button class="btn btn-info" data-toggle="modal" data-target="#formModal" id="edit-pin-btn--${item.firebaseKey}">Edit Pin</button>
+      <button class="btn btn-danger" id="delete-pin--${item.firebaseKey}">Delete Pin</button>
     </div>
   </div>`;
   });
-} 
+};
+
+export default showPins;
