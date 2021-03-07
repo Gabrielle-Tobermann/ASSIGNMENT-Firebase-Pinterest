@@ -2,26 +2,31 @@
   "-MV-KtI36baonlfZol65": {
     "firebaseKey": "-MV-KtI36baonlfZol65",
     "image": "http://dummyimage.com/229x203.png/5fa2dd/ffffff",
-    "title": "Suspect"
+    "title": "Suspect",
+    "uid": "iyg0KcA23LOSar6qfi8hGufsMoH2"
   },
   "-MV-LHQjI34Tz3GfjOgi": {
     "firebaseKey":"-MV-LHQjI34Tz3GfjOgi",
     "image": "http://dummyimage.com/102x248.jpg/dddddd/000000",
-    "title": "Beautiful Thing"
+    "title": "Beautiful Thing",
+    "uid": "iyg0KcA23LOSar6qfi8hGufsMoH2"
   },
   "-MV-LPHAlWjSFaTr5I88": {
     "firebaseKey":"-MV-LPHAlWjSFaTr5I88",
     "image": "http://dummyimage.com/106x181.bmp/ff4444/ffffff",
-    "title": "Sixteen Candles"
+    "title": "Sixteen Candles",
+    "uid": "iyg0KcA23LOSar6qfi8hGufsMoH2"
   }, 
   "-MV-LXZIjIqz-gJErTqu": {
     "firebaseKey":"-MV-LXZIjIqz-gJErTqu",
     "image": "http://dummyimage.com/244x149.bmp/ff4444/ffffff",
-    "title": "Burnt by the Sun 2 (Utomlyonnye solntsem 2)"
+    "title": "Burnt by the Sun 2 (Utomlyonnye solntsem 2)",
+    "uid": "iyg0KcA23LOSar6qfi8hGufsMoH2"
   },
   "-MV-Lc7sBH3pIePuob_2": {
     "firebaseKey":"-MV-Lc7sBH3pIePuob_2",
     "image": "http://dummyimage.com/233x134.jpg/5fa2dd/ffffff",
-    "title": "Scent of a Woman (Profumo di donna)"
+    "title": "Scent of a Woman (Profumo di donna)",
+    "uid": "iyg0KcA23LOSar6qfi8hGufsMoH2"
   }
 }
