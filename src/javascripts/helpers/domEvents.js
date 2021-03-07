@@ -1,16 +1,13 @@
 import showPins from '../components/pins';
-import boardPinsInfo from './data/boardPinData';
+import { boardPinsInfo, deleteBoardPins } from './data/boardPinData';
 import boardInfo from '../components/boardInfo';
+import { deletePins } from './data/pinData';
 import { getBoards } from './data/boardData';
 import { showBoards } from '../components/Boards';
-// import { getBoards } from './data/boardData';
-// import { showBoards, emptyBoards } from '../components/Boards';
-
 // will need to add uid as param
 const domEvents = (uid) => {
   document.querySelector('body').addEventListener('click', (e) => {
     if (e.target.id.includes('board-title')) {
-      console.warn('click');
       const boardId = e.target.id.split('--')[1];
       console.warn(boardId);
       boardPinsInfo(boardId).then((boardInfoObj) => {
@@ -19,12 +16,20 @@ const domEvents = (uid) => {
       });
     }
 
+    if (e.target.id.includes('delete-pin')) {
+      console.warn('click');
+      const firebaseKey = e.target.id.split('--')[1];
+      const boardId = e.target.id.split('--')[2];
+      deletePins(firebaseKey, boardId).then((pinsArr) => showPins(pinsArr));
+    }
+
     if (e.target.id.includes('return-to-boards')) {
       getBoards(uid).then((boardsArray) => showBoards(boardsArray));
     }
 
     if (e.target.id.includes('delete-board')) {
-      console.warn('click');
+      const firebaseKey = e.target.id.split('--')[1];
+      deleteBoardPins(firebaseKey, uid).then((boards) => showBoards(boards));
     }
   });
 };
