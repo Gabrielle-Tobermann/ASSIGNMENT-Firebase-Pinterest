@@ -2,7 +2,7 @@ import showPins from '../components/pins';
 import boardPinsInfo from './data/boardPinData';
 import boardInfo from '../components/boardInfo';
 import { deletePins } from './data/pinData';
-import { getBoards } from './data/boardData';
+import { getBoards, deleteBoard } from './data/boardData';
 import { showBoards } from '../components/Boards';
 // will need to add uid as param
 const domEvents = (uid) => {
@@ -28,7 +28,8 @@ const domEvents = (uid) => {
     }
 
     if (e.target.id.includes('delete-board')) {
-      console.warn('click');
+      const firebaseKey = e.target.id.split('--')[1];
+      deleteBoard(firebaseKey, uid).then((boards) => showBoards(boards));
     }
   });
 };
