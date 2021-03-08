@@ -8,7 +8,7 @@ import domEvents from './domEvents';
 const startApp = (user) => {
   domBuilder(user.uid);
   navBar();
-  document.querySelector('#create-board-nav').innerHTML = '<a class="nav-link" href="#">Create Board</a>';
+  document.querySelector('#create-board-nav').innerHTML = '<a class="nav-link text-dark" href="#">Create Board</a>';
   logoutButton();
   getBoards(user.uid).then((boards) => {
     if (boards.length) {

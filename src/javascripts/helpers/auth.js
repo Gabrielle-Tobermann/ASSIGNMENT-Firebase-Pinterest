@@ -16,6 +16,8 @@ const checkLoginStatus = () => {
       // person is NOT logged in
       loginButton();
       document.querySelector('#create-board-nav').innerHTML = '';
+      document.querySelector('#content-container').innerHTML = '';
+      document.querySelector('#add-button').innerHTML = '';
     }
   });
 };
