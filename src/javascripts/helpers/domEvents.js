@@ -4,6 +4,7 @@ import boardInfo from '../components/boardInfo';
 import { deletePins } from './data/pinData';
 import { getBoards } from './data/boardData';
 import { showBoards } from '../components/Boards';
+import addBoardForm from '../components/Forms/AddBoardForm';
 // will need to add uid as param
 const domEvents = (uid) => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -31,6 +32,12 @@ const domEvents = (uid) => {
       const firebaseKey = e.target.id.split('--')[1];
       deleteBoardPins(firebaseKey, uid).then((boards) => showBoards(boards));
     }
+
+    if (e.target.id.includes('create-board-btn')) {
+      addBoardForm();
+    }
+
+
   });
 };
 
