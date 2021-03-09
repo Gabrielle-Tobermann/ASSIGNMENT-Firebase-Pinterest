@@ -2,8 +2,8 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import { getBoards } from '../helpers/data/boardData';
 
-const selectPin = (pinObj = {}) => {
-  let domString = `<label for="author">Select a Board</label>
+const selectBoard = (pinObj = {}) => {
+  let domString = `<label for="board">Select a Board</label>
   <select class="form-control" id="board" required>
   <option value="">Select a Board</option>`;
 
@@ -16,8 +16,8 @@ const selectPin = (pinObj = {}) => {
       }
     });
     domString += '</select>';
-    document.querySelector('#select-pin').innerHTML = domString;
+    document.querySelector('#select-board').innerHTML = domString;
   });
 };
 
-export default selectPin;
+export default selectBoard;

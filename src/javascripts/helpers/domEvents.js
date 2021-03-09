@@ -1,11 +1,15 @@
 import showPins from '../components/pins';
 import { boardPinsInfo, deleteBoardPins } from './data/boardPinData';
 import boardInfo from '../components/boardInfo';
-import { createPin, deletePins, getPins } from './data/pinData';
+import {
+  createPin, deletePins, getPins, getSinglePin, updatePin
+} from './data/pinData';
 import { createBoard, getBoards } from './data/boardData';
 import { showBoards } from '../components/Boards';
 import addBoardForm from '../components/forms/addFormBoard';
 import addPinForm from '../components/forms/addPinForm';
+import formModal from '../components/forms/formModal';
+import movePinForm from '../components/forms/movePinForm';
 
 const domEvents = (uid) => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -66,6 +70,26 @@ const domEvents = (uid) => {
         uid
       };
       createPin(pinObj).then((pinsArr) => showPins(pinsArr));
+    }
+
+    if (e.target.id.includes('move-pin-btn')) {
+      e.preventDefault();
+      const firebaseKey = e.target.id.split('--')[1];
+      console.warn(firebaseKey);
+      formModal('Move Pin To Another Board');
+      getSinglePin(firebaseKey).then((pinObj) => movePinForm(pinObj));
+    }
+
+    if (e.target.id.includes('update-pin-board')) {
+      e.preventDefault();
+      const firebaseKey = e.target.id.split('--')[1];
+      console.warn('update board', firebaseKey);
+      const pinObj = {
+        board_id: document.querySelector('#board').value
+      };
+      updatePin(firebaseKey, pinObj).then((pinsArr) => showPins(pinsArr));
+      $('#formModal').modal('toggle');
+      console.warn('fbKey', firebaseKey, 'pinObj', pinObj);
     }
   });
 };
