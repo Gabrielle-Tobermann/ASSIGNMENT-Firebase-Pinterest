@@ -8,7 +8,7 @@ const navBar = () => {
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link text-dark" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link text-dark" href="#"id="home">Home <span class="sr-only">(current)</span></a>
       </li>
       <div id="create-board-nav"></div>
     </ul>
