@@ -85,7 +85,7 @@ const domEvents = (uid) => {
       const firebaseKey = e.target.id.split('--')[1];
       console.warn('update board', firebaseKey);
       const pinObj = {
-        board_id: document.querySelector('#board').value
+        board_id: document.querySelector('#board').value, 
       };
       updatePin(firebaseKey, pinObj).then((pinsArr) => showPins(pinsArr));
       $('#formModal').modal('toggle');
