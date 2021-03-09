@@ -11,6 +11,7 @@ const navBar = () => {
         <a class="nav-link text-dark" href="#"id="home">Home <span class="sr-only">(current)</span></a>
       </li>
       <div id="create-board-nav"></div>
+      <div id="create-pin-nav"></div>
     </ul>
   </div>
 </id=nav>`;
