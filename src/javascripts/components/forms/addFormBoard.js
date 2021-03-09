@@ -14,7 +14,4 @@ const addBoardForm = () => {
 </form>`;
 };
 
-// test changes
-// test 
-
 export default addBoardForm;
