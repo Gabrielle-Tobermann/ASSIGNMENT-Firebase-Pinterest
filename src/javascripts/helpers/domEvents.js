@@ -1,7 +1,7 @@
 import showPins from '../components/pins';
 import { boardPinsInfo, deleteBoardPins } from './data/boardPinData';
 import boardInfo from '../components/boardInfo';
-import { createPin, deletePins } from './data/pinData';
+import { createPin, deletePins, getPins } from './data/pinData';
 import { createBoard, getBoards } from './data/boardData';
 import { showBoards } from '../components/Boards';
 import addBoardForm from '../components/forms/addFormBoard';
@@ -16,8 +16,12 @@ const domEvents = (uid) => {
       deletePins(firebaseKey, boardId).then((pinsArr) => showPins(pinsArr));
     }
 
-    if (e.target.id.includes('home')) {
+    if (e.target.id.includes('all-boards')) {
       getBoards(uid).then((boardsArray) => showBoards(boardsArray));
+    }
+
+    if (e.target.id.includes('all-pins')) {
+      getPins(uid).then((pinsArr) => showPins(pinsArr));
     }
 
     if (e.target.id.includes('delete-board')) {
@@ -58,7 +62,7 @@ const domEvents = (uid) => {
         board_id: document.querySelector('#board').value,
         image: document.querySelector('#pin-image').value,
         description: document.querySelector('#pin-description').value,
-        title: document.querySelector('#pin-description').value,
+        title: document.querySelector('#pin-title').value,
         uid
       };
       createPin(pinObj).then((pinsArr) => showPins(pinsArr));
