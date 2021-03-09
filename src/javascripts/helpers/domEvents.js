@@ -1,10 +1,11 @@
 import showPins from '../components/pins';
 import { boardPinsInfo, deleteBoardPins } from './data/boardPinData';
 import boardInfo from '../components/boardInfo';
-import { deletePins } from './data/pinData';
+import { createPin, deletePins } from './data/pinData';
 import { createBoard, getBoards } from './data/boardData';
 import { showBoards } from '../components/Boards';
 import addBoardForm from '../components/forms/addFormBoard';
+import addPinForm from '../components/forms/addPinForm';
 
 const domEvents = (uid) => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -46,6 +47,21 @@ const domEvents = (uid) => {
         showPins(boardInfoObj.boardPins);
         boardInfo(boardInfoObj.board);
       });
+    }
+    if (e.target.id.includes('create-pin-btn')) {
+      addPinForm();
+    }
+
+    if (e.target.id.includes('submit-pin')) {
+      e.preventDefault();
+      const pinObj = {
+        board_id: document.querySelector('#board').value,
+        image: document.querySelector('#pin-image').value,
+        description: document.querySelector('#pin-description').value,
+        title: document.querySelector('#pin-description').value,
+        uid
+      };
+      createPin(pinObj).then((pinsArr) => showPins(pinsArr));
     }
   });
 };
