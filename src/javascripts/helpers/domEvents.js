@@ -4,7 +4,7 @@ import boardInfo from '../components/boardInfo';
 import { deletePins } from './data/pinData';
 import { createBoard, getBoards } from './data/boardData';
 import { showBoards } from '../components/Boards';
-import addBoardForm from '../components/Forms/AddBoardForm';
+import addBoardForm from '../components/forms/addFormBoard';
 
 const domEvents = (uid) => {
   document.querySelector('body').addEventListener('click', (e) => {
