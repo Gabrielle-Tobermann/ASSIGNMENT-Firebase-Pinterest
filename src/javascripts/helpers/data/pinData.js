@@ -40,6 +40,19 @@ const createPin = (pinObj) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
+const getSinglePin = (firebaseKey) => new Promise((resolve, reject) => {
+  console.warn('get single pin');
+  axios.get(`${dbUrl}/pins/${firebaseKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch((error) => reject(error));
+});
+
+const updatePin = (firebaseKey, pinObj) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/pins/${firebaseKey}.json`, pinObj)
+    .then(() => getPins(firebase.auth().currentUser.uid).then((pinsArr) => resolve(pinsArr)))
+    .catch((error) => reject(error));
+});
+
 export {
-  getPins, getBoardPins, deletePins, createPin
+  getPins, getBoardPins, deletePins, createPin, getSinglePin, updatePin
 };
