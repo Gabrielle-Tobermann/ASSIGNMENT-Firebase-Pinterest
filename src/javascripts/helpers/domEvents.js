@@ -5,7 +5,7 @@ import {
   createPin, deletePins, getPins, getSinglePin, updatePin
 } from './data/pinData';
 import {
-  createBoard, getBoards, getSingleBoard, updateBoard
+  createBoard, getBoards, getSingleBoard, searchBoards, updateBoard
 } from './data/boardData';
 import { showBoards } from '../components/Boards';
 import addBoardForm from '../components/forms/addFormBoard';
@@ -116,6 +116,15 @@ const domEvents = (uid) => {
       };
       updateBoard(firebaseKey, boardObj).then((boards) => showBoards(boards));
       $('#formModal').modal('toggle');
+    }
+  });
+
+  document.querySelector('#search-bar').addEventListener('keyup', (e) => {
+    const searchInput = document.querySelector('#search-bar').value.toLowerCase();
+    // If the enter key is pressed
+    if (e.keyCode === 13) {
+      console.warn(searchInput);
+      searchBoards(uid, searchInput).then((boards) => showBoards(boards));
     }
   });
 };
