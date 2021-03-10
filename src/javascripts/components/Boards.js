@@ -8,6 +8,7 @@ const showBoards = (arr) => {
     <img src="${item.image}" class="card-img-top" alt="${item.title}">
     <div class="card-body">
     <a href="#"><h5 id="board-title--${item.firebaseKey}" class="card-title">${item.title}</h5></a>
+    <button class="btn btn-danger" data-toggle="modal" data-target="#formModal" id="edit-board--${item.firebaseKey}">Edit Board</button>
       <button class="btn btn-danger" id="delete-board--${item.firebaseKey}">Delete Board</button>
     </div>
   </div>`;
