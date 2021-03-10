@@ -48,7 +48,6 @@ const getSinglePin = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 const updatePin = (firebaseKey, pinObj) => new Promise((resolve, reject) => {
-  console.warn('update pin');
   axios.patch(`${dbUrl}/pins/${firebaseKey}.json`, pinObj)
     .then(() => getPins(firebase.auth().currentUser.uid).then((pinsArr) => resolve(pinsArr)))
     .catch((error) => reject(error));
