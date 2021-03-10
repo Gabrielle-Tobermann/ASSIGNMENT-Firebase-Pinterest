@@ -4,12 +4,15 @@ import boardInfo from '../components/boardInfo';
 import {
   createPin, deletePins, getPins, getSinglePin, updatePin
 } from './data/pinData';
-import { createBoard, getBoards } from './data/boardData';
+import {
+  createBoard, getBoards, getSingleBoard, updateBoard
+} from './data/boardData';
 import { showBoards } from '../components/Boards';
 import addBoardForm from '../components/forms/addFormBoard';
 import addPinForm from '../components/forms/addPinForm';
 import formModal from '../components/forms/formModal';
 import editPinForm from '../components/forms/editPinForm';
+import editBoardForm from '../components/forms/editBoardForm';
 
 const domEvents = (uid) => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -91,6 +94,28 @@ const domEvents = (uid) => {
         uid
       };
       updatePin(firebaseKey, pinObj).then((pinsArr) => showPins(pinsArr));
+      $('#formModal').modal('toggle');
+    }
+
+    if (e.target.id.includes('edit-board')) {
+      console.warn('trying to edit board');
+      e.preventDefault();
+      const firebaseKey = e.target.id.split('--')[1];
+      console.warn(firebaseKey);
+      formModal('Edit Board');
+      getSingleBoard(firebaseKey).then((boardObj) => editBoardForm(boardObj));
+    }
+
+    if (e.target.id.includes('update-board')) {
+      e.preventDefault();
+      const firebaseKey = e.target.id.split('--')[1];
+      const boardObj = {
+        title: document.querySelector('#title-board').value,
+        image: document.querySelector('#board-image').value,
+        uid
+      };
+      updateBoard(firebaseKey, boardObj).then((boards) => showBoards(boards));
+      debugger;
       $('#formModal').modal('toggle');
     }
   });

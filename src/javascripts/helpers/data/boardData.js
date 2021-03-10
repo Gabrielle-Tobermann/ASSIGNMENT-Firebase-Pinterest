@@ -40,6 +40,12 @@ const createBoard = (boardObj) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
+const updateBoard = (firebaseKey, boardObj) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/boards/${firebaseKey}.json`, boardObj)
+    .then(() => getBoards(firebase.auth().currentUser.uid).then((boards) => resolve(boards)))
+    .catch((error) => reject(error));
+});
+
 export {
-  getBoards, getSingleBoard, deleteBoard, createBoard
+  getBoards, getSingleBoard, deleteBoard, createBoard, updateBoard
 };
