@@ -115,7 +115,6 @@ const domEvents = (uid) => {
         uid
       };
       updateBoard(firebaseKey, boardObj).then((boards) => showBoards(boards));
-      debugger;
       $('#formModal').modal('toggle');
     }
   });
