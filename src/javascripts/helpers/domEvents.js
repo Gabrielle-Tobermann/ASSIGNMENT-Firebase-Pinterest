@@ -2,10 +2,10 @@ import showPins from '../components/pins';
 import { boardPinsInfo, deleteBoardPins } from './data/boardPinData';
 import boardInfo from '../components/boardInfo';
 import {
-  createPin, deletePins, getPins, getSinglePin, updatePin
+  createPin, deletePins, getSinglePin, updatePin
 } from './data/pinData';
 import {
-  createBoard, getBoards, getSingleBoard, searchBoards, updateBoard
+  createBoard, getSingleBoard, updateBoard
 } from './data/boardData';
 import { showBoards } from '../components/Boards';
 import addBoardForm from '../components/forms/addFormBoard';
@@ -21,14 +21,6 @@ const domEvents = (uid) => {
       const firebaseKey = e.target.id.split('--')[1];
       const boardId = e.target.id.split('--')[2];
       deletePins(firebaseKey, boardId).then((pinsArr) => showPins(pinsArr));
-    }
-
-    if (e.target.id.includes('all-boards')) {
-      getBoards(uid).then((boardsArray) => showBoards(boardsArray));
-    }
-
-    if (e.target.id.includes('all-pins')) {
-      getPins(uid).then((pinsArr) => showPins(pinsArr));
     }
 
     if (e.target.id.includes('delete-board')) {
@@ -116,15 +108,6 @@ const domEvents = (uid) => {
       };
       updateBoard(firebaseKey, boardObj).then((boards) => showBoards(boards));
       $('#formModal').modal('toggle');
-    }
-  });
-
-  document.querySelector('#search-bar').addEventListener('keyup', (e) => {
-    const searchInput = document.querySelector('#search-bar').value.toLowerCase();
-    // If the enter key is pressed
-    if (e.keyCode === 13) {
-      console.warn(searchInput);
-      searchBoards(uid, searchInput).then((boards) => showBoards(boards));
     }
   });
 };
