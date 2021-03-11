@@ -23,9 +23,9 @@ const deleteBoardPins = (boardId, uid) => new Promise((resolve, reject) => {
 });
 
 const searchBoardsandPins = (uid, searchInput) => new Promise((resolve, reject) => {
-  const pin = searchPins(uid, searchInput);
   const board = searchBoards(uid, searchInput);
-  Promise.all([pin, board]).then(([pinResponse, boardResponse]) => resolve({ pin: pinResponse, board: boardResponse }))
+  const pin = searchPins(uid, searchInput);
+  Promise.all([board, pin]).then(([boardResponse, pinResponse]) => resolve({ board: boardResponse, pin: pinResponse }))
     .catch((error) => reject(error));
 });
 

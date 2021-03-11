@@ -19,8 +19,8 @@ const navEvents = (uid) => {
     if (e.keyCode === 13) {
       searchBoardsandPins(uid, searchInput).then((pinBoardObj) => {
         console.warn(pinBoardObj);
-        showPins(pinBoardObj.pin);
         showBoards(pinBoardObj.board);
+        showPins(pinBoardObj.pin);
         document.querySelector('#search-bar').value = '';
       });
     }

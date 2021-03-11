@@ -48,15 +48,8 @@ const updateBoard = (firebaseKey, boardObj) => new Promise((resolve, reject) => 
 });
 
 const searchBoards = (userId, searchInput) => new Promise((resolve, reject) => {
-  getBoards(userId).then((boardsArr) => {
-    const filterValue = boardsArr.filter((board) => {
-      let matchesValue = false;
-      if (board.title.toLowerCase() === searchInput) {
-        matchesValue = true;
-      }
-      return matchesValue;
-    });
-    resolve(filterValue);
+  getBoards(userId).then((response) => {
+    resolve(response.filter((board) => board.title.toLowerCase().includes(searchInput)));
   }).catch((error) => reject(error));
 });
 

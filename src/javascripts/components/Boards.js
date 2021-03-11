@@ -1,6 +1,6 @@
 const showBoards = (arr) => {
-  document.querySelector('#pin-container').innerHTML = '';
   document.querySelector('#board-container').innerHTML = '';
+  document.querySelector('#pin-container').innerHTML = '';
   document.querySelector('#form-container').innerHTML = '';
   document.querySelector('#add-button').innerHTML = '<div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create</button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#" id="create-board-btn">Board</a><a class="dropdown-item" href="#" id="create-pin-btn">Pin</a></div></div>';
   arr.forEach((item) => {
