@@ -16,6 +16,7 @@ const checkLoginStatus = () => {
       document.querySelector('#create-board-nav').innerHTML = '';
       document.querySelector('#board-container').innerHTML = '';
       document.querySelector('#pin-container').innerHTML = '';
+      document.querySelector('#content-container').innerHTML = '';
       document.querySelector('#add-button').innerHTML = '';
     }
   });

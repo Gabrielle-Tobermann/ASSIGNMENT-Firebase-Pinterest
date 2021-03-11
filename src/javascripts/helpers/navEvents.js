@@ -1,8 +1,10 @@
 import { showBoards } from '../components/Boards';
 import showPins from '../components/pins';
-import { getPins } from './data/pinData';
-import { getBoards } from './data/boardData';
-import { searchBoardsandPins } from './data/boardPinData';
+import { getPins, searchPins } from './data/pinData';
+import { getBoards, searchBoards } from './data/boardData';
+// import { searchBoardsandPins } from './data/boardPinData';
+// import showSearchedPins from '../components/showSearchedPins';
+// import showSearchedBoards from '../components/showSearchedBoards';
 
 const navEvents = (uid) => {
   document.querySelector('#all-boards').addEventListener('click', () => {
@@ -17,12 +19,10 @@ const navEvents = (uid) => {
     const searchInput = document.querySelector('#search-bar').value.toLowerCase();
     // If the enter key is pressed
     if (e.keyCode === 13) {
-      searchBoardsandPins(uid, searchInput).then((pinBoardObj) => {
-        console.warn(pinBoardObj);
-        showBoards(pinBoardObj.board);
-        showPins(pinBoardObj.pin);
-        document.querySelector('#search-bar').value = '';
-      });
+      debugger;
+      searchBoards(uid, searchInput).then((boards) => showBoards(boards));
+      searchPins(uid, searchInput).then((pins) => showPins(pins));
+      document.querySelector('#search-bar').value = '';
     }
   });
 };

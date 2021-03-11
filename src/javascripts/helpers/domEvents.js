@@ -47,8 +47,8 @@ const domEvents = (uid) => {
       const boardId = e.target.id.split('--')[1];
       console.warn(boardId);
       boardPinsInfo(boardId).then((boardInfoObj) => {
-        showPins(boardInfoObj.boardPins);
         boardInfo(boardInfoObj.board);
+        showPins(boardInfoObj.boardPins);
       });
     }
     if (e.target.id.includes('create-pin-btn')) {
