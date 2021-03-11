@@ -19,7 +19,6 @@ const navEvents = (uid) => {
     const searchInput = document.querySelector('#search-bar').value.toLowerCase();
     // If the enter key is pressed
     if (e.keyCode === 13) {
-      debugger;
       searchBoards(uid, searchInput).then((boards) => showBoards(boards));
       searchPins(uid, searchInput).then((pins) => showPins(pins));
       document.querySelector('#search-bar').value = '';
