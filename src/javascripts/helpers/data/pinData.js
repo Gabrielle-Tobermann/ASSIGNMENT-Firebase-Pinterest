@@ -54,17 +54,8 @@ const updatePin = (firebaseKey, pinObj) => new Promise((resolve, reject) => {
 });
 
 const searchPins = (userId, searchInput) => new Promise((resolve, reject) => {
-  getPins(userId).then((pinsArr) => {
-    const filterValue = pinsArr.filter((pin) => {
-      console.warn(pin);
-      let matchesValue = false;
-      if (pin.title.toLowerCase() === searchInput) {
-        matchesValue = true;
-      }
-      return matchesValue;
-    });
-    console.warn(filterValue);
-    resolve(filterValue);
+  getPins(userId).then((response) => {
+    resolve(response.filter((pin) => pin.title.toLowerCase().includes(searchInput)));
   }).catch((error) => reject(error));
 });
 
