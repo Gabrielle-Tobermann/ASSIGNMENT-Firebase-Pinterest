@@ -10,6 +10,7 @@ const getBoards = (userId) => new Promise((resolve, reject) => {
     .then((response) => {
       if (response.data) {
         resolve(Object.values(response.data));
+        console.warn(Object.values(response.data));
       } else {
         resolve([]);
       }
@@ -46,6 +47,12 @@ const updateBoard = (firebaseKey, boardObj) => new Promise((resolve, reject) => 
     .catch((error) => reject(error));
 });
 
+const searchBoards = (userId, searchInput) => new Promise((resolve, reject) => {
+  getBoards(userId).then((response) => {
+    resolve(response.filter((board) => board.title.toLowerCase().includes(searchInput)));
+  }).catch((error) => reject(error));
+});
+
 export {
-  getBoards, getSingleBoard, deleteBoard, createBoard, updateBoard
+  getBoards, getSingleBoard, deleteBoard, createBoard, updateBoard, searchBoards
 };

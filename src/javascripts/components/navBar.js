@@ -14,6 +14,12 @@ const navBar = () => {
       <a class="nav-link text-dark" href="#"id="all-pins">Pins <span class="sr-only">(current)</span></a>
     </li>
     </ul>
+    <form class="form-inline">
+    <div class="bg-light border border-light rounded-pill">
+    <i class="fas fa-search m-2 text-secondary" id="search-icon"></i>
+    <input class="form-control mr-sm-2 border-0 bg-light" type="search" placeholder="Search" aria-label="Search" id="search-bar">
+    </div>
+  </form>
   </div>
 </nav>`;
 

@@ -4,6 +4,7 @@ import navBar from '../components/navBar';
 import { emptyBoards, showBoards } from '../components/Boards';
 import { getBoards } from './data/boardData';
 import domEvents from './domEvents';
+import navEvents from './navEvents';
 
 const startApp = (user) => {
   domBuilder(user.uid);
@@ -17,6 +18,7 @@ const startApp = (user) => {
     }
   });
   domEvents(user.uid);
+  navEvents(user.uid);
 };
 
 export default startApp;
