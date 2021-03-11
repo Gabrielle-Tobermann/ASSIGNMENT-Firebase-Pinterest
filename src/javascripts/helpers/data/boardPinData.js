@@ -1,5 +1,5 @@
-import { deleteBoard, getSingleBoard } from './boardData';
-import { getBoardPins, deletePins } from './pinData';
+import { deleteBoard, getSingleBoard, searchBoards } from './boardData';
+import { getBoardPins, deletePins, searchPins } from './pinData';
 
 const boardPinsInfo = (boardId) => new Promise((resolve, reject) => {
   console.warn(boardId);
@@ -22,4 +22,11 @@ const deleteBoardPins = (boardId, uid) => new Promise((resolve, reject) => {
   }).catch((error) => reject(error));
 });
 
-export { boardPinsInfo, deleteBoardPins };
+const searchBoardsandPins = (uid, searchInput) => new Promise((resolve, reject) => {
+  const pin = searchPins(uid, searchInput);
+  const board = searchBoards(uid, searchInput);
+  Promise.all([pin, board]).then(([pinResponse, boardResponse]) => resolve({ pin: pinResponse, board: boardResponse }))
+    .catch((error) => reject(error));
+});
+
+export { boardPinsInfo, deleteBoardPins, searchBoardsandPins };

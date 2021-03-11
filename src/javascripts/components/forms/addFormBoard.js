@@ -1,5 +1,6 @@
 const addBoardForm = () => {
-  document.querySelector('#content-container').innerHTML = '';
+  document.querySelector('#pin-container').innerHTML = '';
+  document.querySelector('#board-container').innerHTML = '';
   document.querySelector('#add-button').innerHTML = '';
   document.querySelector('#form-container').innerHTML = `<form>
   <div class="form-group">
