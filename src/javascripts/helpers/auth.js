@@ -1,5 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import home from '../components/home';
 import loginButton from '../components/loginButton';
 import firebaseConfig from './apiKeys';
 import startApp from './startApp';
@@ -12,8 +13,10 @@ const checkLoginStatus = () => {
       startApp(user);
     } else {
       // person is NOT logged in
-      document.querySelector('#content-container').innerHTML = '';
-      document.querySelector('#add-button').innerHTML = '';
+      home();
+      // document.querySelector('#navbarNav').innerHTML = '';
+      // document.querySelector('#content-container').innerHTML = '';
+      // document.querySelector('#add-button').innerHTML = '';
       loginButton();
       // document.querySelector('#create-board-nav').innerHTML = '';
     }
