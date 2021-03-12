@@ -13,13 +13,35 @@ body {
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 #navigation {
   color: #E60023;
   background-color: white;
+  width: 75%;
 }
 
 #navigation a {
   color: #E60023;
+}
+
+#search-container {
+  width: 75%;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+#dropdownMenuButton {
+  color: black;
+  font-size: 70px;
+  font-weight: bold;
+}
+
+#dropdownMenuButton .btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
 }

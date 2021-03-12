@@ -7,17 +7,17 @@ const navBar = () => {
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
+      <li class="nav-item active ml-3">
         <a class="nav-link text-dark" href="#"id="all-boards">Boards <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item active ml-3">
       <a class="nav-link text-dark" href="#"id="all-pins">Pins <span class="sr-only">(current)</span></a>
     </li>
     </ul>
-    <form class="form-inline">
-    <div class="bg-light border border-light rounded-pill">
-    <i class="fas fa-search m-2 text-secondary" id="search-icon"></i>
-    <input class="form-control mr-sm-2 border-0 bg-light" type="search" placeholder="Search" aria-label="Search" id="search-bar">
+    <form class="form-inline w-75 pl-0 ml-5" id="search-container">
+    <div class="bg-light border border-light rounded-pill w-100">
+    <i class="fas fa-search m-2 text-secondary p-1 justify-content-start" id="search-icon"></i>
+    <input class="form-control mr-5 border-0 bg-light shadow-none w-75" type="search" placeholder="Search" aria-label="Search" id="search-bar">
     </div>
   </form>
   </div>
