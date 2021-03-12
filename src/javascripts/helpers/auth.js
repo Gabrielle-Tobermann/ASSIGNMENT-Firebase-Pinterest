@@ -14,11 +14,7 @@ const checkLoginStatus = () => {
     } else {
       // person is NOT logged in
       home();
-      // document.querySelector('#navbarNav').innerHTML = '';
-      // document.querySelector('#content-container').innerHTML = '';
-      // document.querySelector('#add-button').innerHTML = '';
       loginButton();
-      // document.querySelector('#create-board-nav').innerHTML = '';
     }
   });
 };

@@ -10,7 +10,6 @@ const getBoards = (userId) => new Promise((resolve, reject) => {
     .then((response) => {
       if (response.data) {
         resolve(Object.values(response.data));
-        console.warn(Object.values(response.data));
       } else {
         resolve([]);
       }

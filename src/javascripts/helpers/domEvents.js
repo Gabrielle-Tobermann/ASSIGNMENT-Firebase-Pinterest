@@ -17,7 +17,6 @@ import editBoardForm from '../components/forms/editBoardForm';
 const domEvents = (uid) => {
   document.querySelector('body').addEventListener('click', (e) => {
     if (e.target.id.includes('delete-pin')) {
-      console.warn('click');
       const firebaseKey = e.target.id.split('--')[1];
       const boardId = e.target.id.split('--')[2];
       deletePins(firebaseKey, boardId).then((pinsArr) => showPins(pinsArr));
@@ -45,7 +44,6 @@ const domEvents = (uid) => {
 
     if (e.target.id.includes('board-title')) {
       const boardId = e.target.id.split('--')[1];
-      console.warn(boardId);
       boardPinsInfo(boardId).then((boardInfoObj) => {
         boardInfo(boardInfoObj);
         showPins(boardInfoObj.boardPins);
@@ -70,7 +68,6 @@ const domEvents = (uid) => {
     if (e.target.id.includes('edit-pin-btn')) {
       e.preventDefault();
       const firebaseKey = e.target.id.split('--')[1];
-      console.warn(firebaseKey);
       formModal('Edit Pin');
       getSinglePin(firebaseKey).then((pinObj) => editPinForm(pinObj));
     }
@@ -90,10 +87,8 @@ const domEvents = (uid) => {
     }
 
     if (e.target.id.includes('edit-board')) {
-      console.warn('trying to edit board');
       e.preventDefault();
       const firebaseKey = e.target.id.split('--')[1];
-      console.warn(firebaseKey);
       formModal('Edit Board');
       getSingleBoard(firebaseKey).then((boardObj) => editBoardForm(boardObj));
     }
