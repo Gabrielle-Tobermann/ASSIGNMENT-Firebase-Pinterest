@@ -36,7 +36,6 @@ const createBoard = (boardObj) => new Promise((resolve, reject) => {
         .then(() => {
           getBoards(firebase.auth().currentUser.uid).then((boards) => resolve(boards));
         });
-      console.warn('board fbKey', response.data.name);
     }).catch((error) => reject(error));
 });
 

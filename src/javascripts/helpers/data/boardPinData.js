@@ -2,7 +2,6 @@ import { deleteBoard, getSingleBoard } from './boardData';
 import { getBoardPins, deletePins } from './pinData';
 
 const boardPinsInfo = (boardId) => new Promise((resolve, reject) => {
-  console.warn(boardId);
   const board = getSingleBoard(boardId);
   const boardPins = getBoardPins(boardId);
 
