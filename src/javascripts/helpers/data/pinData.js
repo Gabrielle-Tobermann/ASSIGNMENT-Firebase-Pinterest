@@ -36,12 +36,10 @@ const createPin = (pinObj) => new Promise((resolve, reject) => {
         .then(() => {
           getPins(firebase.auth().currentUser.uid).then((pinsArr) => resolve(pinsArr));
         });
-      console.warn('fbKey', response.data.name);
     }).catch((error) => reject(error));
 });
 
 const getSinglePin = (firebaseKey) => new Promise((resolve, reject) => {
-  console.warn('get single pin');
   axios.get(`${dbUrl}/pins/${firebaseKey}.json`)
     .then((response) => resolve(response.data))
     .catch((error) => reject(error));

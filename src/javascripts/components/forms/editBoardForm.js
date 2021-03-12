@@ -8,7 +8,7 @@ const editBoardForm = (boardObj) => {
     <label for="boardImage">Image</label>
     <input type="url" class="form-control" id="board-image" value="${boardObj.image}">
   </div>
-  <button type="submit" class="btn btn-primary" id="update-board--${boardObj.firebaseKey}">Update Board</button>
+  <button type="submit" class="btn btn-danger rounded-pill" id="update-board--${boardObj.firebaseKey}">Update Board</button>
 </form>`;
 };
 
