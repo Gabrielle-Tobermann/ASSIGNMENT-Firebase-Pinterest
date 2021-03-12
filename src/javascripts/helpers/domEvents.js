@@ -47,7 +47,7 @@ const domEvents = (uid) => {
       const boardId = e.target.id.split('--')[1];
       console.warn(boardId);
       boardPinsInfo(boardId).then((boardInfoObj) => {
-        boardInfo(boardInfoObj.board);
+        boardInfo(boardInfoObj);
         showPins(boardInfoObj.boardPins);
       });
     }
