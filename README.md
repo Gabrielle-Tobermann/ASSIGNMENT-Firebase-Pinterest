@@ -1,4 +1,4 @@
-# Pinterest
+# Pinterest [![Netlify Status](https://api.netlify.com/api/v1/badges/b7a18c81-7724-4608-8bef-92719dc2c901/deploy-status)](https://app.netlify.com/sites/gt-pinterest/deploys)
 
 ## Overview
 This app allows users to create boards, which contain pins of things they want to keep a record of. They can delete or edit boards and pins, and search through boards.
@@ -17,6 +17,7 @@ This app is useful for people interested in keeping a record of specific topics 
 - Netlify: https://gt-pinterest.netlify.app/
 - Project Board: https://github.com/Gabrielle-Tobermann/ASSIGNMENT-Firebase-Pinterest/projects/1
 - Figma https://www.figma.com/file/0xRSGwGCVCcFFmiaXoOJBo/Pinterest?node-id=1%3A132
+- ERD https://dbdiagram.io/d/604177fbfcdcb6230b22ad4c
 
 ## Loom 
 https://www.loom.com/share/844becac659b49c1ac48598e9840fdd6
